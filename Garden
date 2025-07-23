@@ -1,0 +1,68 @@
+loadstring([[
+local correctKey = "68170246I$6528"
+local keyLink = "https://lootdest.org/s?1X8toeUa"
+
+local gui = Instance.new("ScreenGui", game.CoreGui)
+gui.Name = "Aethra_KeySystem"
+
+local frame = Instance.new("Frame", gui)
+frame.Size = UDim2.new(0, 400, 0, 220)
+frame.Position = UDim2.new(0.5, -200, 0.5, -110)
+frame.BackgroundColor3 = Color3.fromRGB(25, 25, 30)
+Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
+
+local title = Instance.new("TextLabel", frame)
+title.Size = UDim2.new(1, 0, 0, 40)
+title.Text = "🔑 Enter Aethra Key"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.Font = Enum.Font.GothamBold
+title.TextScaled = true
+title.BackgroundTransparency = 1
+
+local keyBox = Instance.new("TextBox", frame)
+keyBox.Size = UDim2.new(0.8, 0, 0, 40)
+keyBox.Position = UDim2.new(0.1, 0, 0.3, 0)
+keyBox.PlaceholderText = "Paste your key here..."
+keyBox.Text = ""
+keyBox.Font = Enum.Font.Gotham
+keyBox.TextScaled = true
+keyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+keyBox.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+Instance.new("UICorner", keyBox).CornerRadius = UDim.new(0, 8)
+
+local copyBtn = Instance.new("TextButton", frame)
+copyBtn.Size = UDim2.new(0.8, 0, 0, 35)
+copyBtn.Position = UDim2.new(0.1, 0, 0.55, 0)
+copyBtn.Text = "📋 Get Key"
+copyBtn.Font = Enum.Font.Gotham
+copyBtn.TextScaled = true
+copyBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+copyBtn.BackgroundColor3 = Color3.fromRGB(60, 60, 70)
+Instance.new("UICorner", copyBtn).CornerRadius = UDim.new(0, 8)
+
+copyBtn.MouseButton1Click:Connect(function()
+    setclipboard(keyLink)
+    copyBtn.Text = "✅ Copied!"
+end)
+
+local submitBtn = Instance.new("TextButton", frame)
+submitBtn.Size = UDim2.new(0.8, 0, 0, 35)
+submitBtn.Position = UDim2.new(0.1, 0, 0.75, 0)
+submitBtn.Text = "✅ Submit"
+submitBtn.Font = Enum.Font.GothamBold
+submitBtn.TextScaled = true
+submitBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+submitBtn.BackgroundColor3 = Color3.fromRGB(0, 170, 90)
+Instance.new("UICorner", submitBtn).CornerRadius = UDim.new(0, 8)
+
+submitBtn.MouseButton1Click:Connect(function()
+    if keyBox.Text == correctKey then
+        gui:Destroy()
+        loadstring(game:HttpGet("https://pastefy.app/dvz38weH/raw"))()
+    else
+        submitBtn.Text = "❌ Wrong Key"
+        wait(1)
+        submitBtn.Text = "✅ Submit"
+    end
+end)
+]])()
