@@ -58,7 +58,7 @@ Instance.new("UICorner", submitBtn).CornerRadius = UDim.new(0, 8)
 submitBtn.MouseButton1Click:Connect(function()
     if keyBox.Text == correctKey then
         gui:Destroy()
-        loadstring(game:HttpGet("https://pastefy.app/dvz38weH/raw"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/NOATvg/Now-/refs/heads/main/Free"))()
     else
         submitBtn.Text = "❌ Wrong Key"
         wait(1)
