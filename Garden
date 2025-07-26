@@ -1,6 +1,6 @@
 loadstring([[
 local correctKey = "68170246I$6528"
-local keyLink = "https://yorurl.com/zlnd9Y"
+local keyLink = "https://lootdest.org/s?1X8toeUa"
 
 local gui = Instance.new("ScreenGui", game.CoreGui)
 gui.Name = "Aethra_KeySystem"
